@@ -151,7 +151,7 @@ char *ft_format_duration(char *seconds)
     long long   num;
     int         particles;
 
-    if (!check_input(seconds) || (num = atoll(seconds)) > MAX_SECONDS)
+    if (!check_input(seconds) || (num = atoll(seconds)) > MAX_SECONDS || num < 0)
         return (allocate_string("Invalid input."));
     if (num == 0)
         return (allocate_string("now"));
